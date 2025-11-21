@@ -16,9 +16,10 @@ app.get("/", (req, res) => {
 
 app.post("/submit", async (req, res) => {
   try {
-    await axios.post("http://backend:5000/submit", req.body);
+    await axios.post("http://13.205.2.135:5000/submit", req.body);
     res.send("Data sent to Flask backend!");
   } catch (err) {
+    console.log(err);
     res.status(500).send("Backend error");
   }
 });
